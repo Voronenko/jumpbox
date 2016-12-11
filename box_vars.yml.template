@@ -26,7 +26,8 @@
 
  custom_softether_ipsec_presharedkey: "[1KH;+r-X#cvhpv7Y6=#;[{u"
 
-# 22 SSH ; 500/4500 - Softether with IPSec ; 1194 - OpenVPN;
+# 22 SSH ; 500/4500 - Softether with IPSec ; 1194 - OpenVPN; 1723 - PPTP;
+# revise port list for your use , consider securing by  custom_ufw_rules_allow_from_hosts
  custom_ports_allow:
     - {
         port: 22,
@@ -44,6 +45,17 @@
         port: 1194,
         proto: tcp
       }
+    - {
+        port: 1723,
+        proto: tcp
+      }
+
+ custom_ufw_rules_allow_from_hosts: []
+    # - {
+    #     port: 22,
+    #     proto: tcp,
+    #     address: "192.168.0.0/16"
+    #    }
 
 
  custom_knock_ports:
