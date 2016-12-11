@@ -3,3 +3,6 @@ public
 roles
 box_vars.yml
 components/files/ssh/*
+*.ovpn
+*.zip
+*.retry

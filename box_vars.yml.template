@@ -26,13 +26,32 @@
 
  custom_softether_ipsec_presharedkey: "[1KH;+r-X#cvhpv7Y6=#;[{u"
 
+# 22 SSH ; 500/4500 - Softether with IPSec ; 1194 - OpenVPN;
+ custom_ports_allow:
+    - {
+        port: 22,
+        proto: tcp
+      }
+    - {
+        port: 500,
+        proto: udp
+      }
+    - {
+        port: 4500,
+        proto: udp
+      }
+    - {
+        port: 1194,
+        proto: tcp
+      }
 
-custom_knock_ports:
- - {
-     "name": "ssh",
-     "sequence": "15000, 16000, 17000",
-     "seq_timeout": 5,
-     "port": 22,
-     "tcpflags": "syn",
-     "cmd_timeout": 10
-   }
+
+ custom_knock_ports:
+   - {
+       "name": "ssh",
+       "sequence": "15000, 16000, 17000",
+       "seq_timeout": 5,
+       "port": 22,
+       "tcpflags": "syn",
+       "cmd_timeout": 10
+     }

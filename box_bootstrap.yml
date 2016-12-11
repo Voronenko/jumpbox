@@ -37,7 +37,8 @@
      - {
          role: "sa-vpn-softether",
          softether_vpn_users: "{{custom_softether_vpn_users}}",
-         softether_ipsec_presharedkey: "{{custom_softether_ipsec_presharedkey}}"
+         softether_ipsec_presharedkey: "{{custom_softether_ipsec_presharedkey}}",
+         when: option_jumpbox_softether
        }
      - {
          role: "sa-port-knock",
