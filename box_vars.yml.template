@@ -11,6 +11,22 @@
  my_deploy_authorized_keys:
    - "~/.ssh/id_rsa.pub"
 
+ custom_pptp_vpn_users:
+  - {
+      name: "my_user",
+      password: "my_password"
+    }
+
+ custom_openvpn_vpn_users:
+  - {
+      name: "my_user"
+    }
+
+ custom_softether_vpn_users: "{{custom_pptp_vpn_users}}"
+
+ custom_softether_ipsec_presharedkey: "[1KH;+r-X#cvhpv7Y6=#;[{u"
+
+
 custom_knock_ports:
  - {
      "name": "ssh",

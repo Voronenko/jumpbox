@@ -26,15 +26,18 @@
        }
      - {
         role: "sa-vpn-pptp",
+        pptp_vpn_users: "{{custom_pptp_vpn_users}}",
         when: option_jumpbox_pptp
        }
      - {
         role: "sa-vpn-openvpn",
+        openvpn_vpn_users: "{{custom_openvpn_vpn_users}}",
         when: option_jumpbox_openvpn
        }
      - {
-        role: "sa-vpn-softether",
-        when: option_jumpbox_softether
+         role: "sa-vpn-softether",
+         softether_vpn_users: "{{custom_softether_vpn_users}}",
+         softether_ipsec_presharedkey: "{{custom_softether_ipsec_presharedkey}}"
        }
      - {
          role: "sa-port-knock",
