@@ -1,0 +1,22 @@
+
+ option_jumpbox_pptp: true     # install classic PPTP server
+
+ option_jumpbox_openvpn: true  # install OpenVPN server
+
+ option_jumpbox_softether: false # install openvpn SoftEther server (+ few more targeting windows)
+
+ option_jumpbox_port_knock: false
+
+ my_deploy_user: slavko
+ my_deploy_authorized_keys:
+   - "~/.ssh/id_rsa.pub"
+
+custom_knock_ports:
+ - {
+     "name": "ssh",
+     "sequence": "15000, 16000, 17000",
+     "seq_timeout": 5,
+     "port": 22,
+     "tcpflags": "syn",
+     "cmd_timeout": 10
+   }

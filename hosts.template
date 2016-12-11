@@ -1,0 +1,4 @@
+[bootstrap]
+box_bootstrap ansible_ssh_host=192.168.0.17 ansible_ssh_user=yourboxusername ansible_ssh_pass=yourboxpath
+
+

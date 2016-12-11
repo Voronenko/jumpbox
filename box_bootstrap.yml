@@ -1,0 +1,43 @@
+---
+- hosts: www
+  gather_facts: False
+
+  pre_tasks:
+    - debug: msg="Pre tasks section"
+
+    - name: ANSIBLE PYTHON | install python 2
+      raw: test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)
+      become: yes
+
+    - name:  UNPRIVILEGED USERS | Get acl dependency (ansible unprivileged user operations magic)
+      apt: pkg="acl"
+      become: yes
+
+    - name: gather facts
+      setup:
+
+  vars_files:
+    - ./box_vars.yml
+  roles:
+     - {
+         role: "sa-box-bootstrap",
+         deploy_user: "{{my_deploy_user}}",
+         deploy_user_keys: "{{my_deploy_authorized_keys}}"
+       }
+     - {
+        role: "sa-vpn-pptp",
+        when: option_jumpbox_pptp
+       }
+     - {
+        role: "sa-vpn-openvpn",
+        when: option_jumpbox_openvpn
+       }
+     - {
+        role: "sa-vpn-softether",
+        when: option_jumpbox_softether
+       }
+     - {
+         role: "sa-port-knock",
+         knock_ports: "{{custom_knock_ports}}",
+         when: option_jumpbox_port_knock
+       }
