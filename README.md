@@ -229,6 +229,17 @@ custom_knock_ports:
     }
 ```
 
+Our port knock daemon setup part would be:
+
+```YAML
+roles:
+  - {
+      role: "sa-port-knock",
+      knock_ports: "{{custom_knock_ports}}",
+      when: option_jumpbox_port_knock
+    }
+```
+
 
 # Full code in action
 
