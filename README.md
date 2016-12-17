@@ -260,3 +260,6 @@ option_jumpbox_port_knock: false # configure portknocking
 
 You can reuse this playbook to create your own jump box bootstaping projects, and
 reuse the role to configure your environments quicker in secure way with ansible
+
+Acceptable for home / small team use. For enterprise use - make sure you understand what you do,
+as for your company you might need to follow different procedures.
