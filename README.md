@@ -244,7 +244,7 @@ roles:
 # Full code in action
 
 Full code in action can be found on Github at https://github.com/Voronenko/jumpbox ;
-It configures jumpbox with PPTP / OpenVPN / SSH by default, but can be adjusted using option switches, to deploy set of described above combinations.
+It configures jumpbox with PPTP / OpenVPN / SSH via keys by default, but can be adjusted using option switches, to deploy set of described above combinations.
 ```YAML
 option_jumpbox_pptp: true     # install classic PPTP server
 
