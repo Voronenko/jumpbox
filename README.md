@@ -81,7 +81,7 @@ roles:
    - {
        role: "sa-box-bootstrap",
        deploy_user: "{{my_deploy_user}}",
-       deploy_user_keys: "{{my_deploy_authorized_keys}}",
+       deploy_user_authorized_keys: "{{my_deploy_authorized_keys}}",
        ufw_rules_allow: "{{custom_ports_allow}}"
      }
 
