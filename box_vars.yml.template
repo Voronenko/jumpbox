@@ -5,6 +5,8 @@
 
  option_jumpbox_softether: false # install openvpn SoftEther server (+ few more targeting windows)
 
+ option_jumpbox_wireguard: false # 
+
  option_jumpbox_port_knock: false
 
  my_deploy_user: slavko
@@ -31,6 +33,14 @@
  custom_ports_allow:
     - {
         port: 22,
+        proto: tcp
+      }
+    - {
+        port: 443,
+        proto: udp
+      }
+    - {
+        port: 443,
         proto: tcp
       }
     - {

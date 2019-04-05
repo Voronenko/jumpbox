@@ -1,0 +1,14 @@
+- src: softasap.sa_jumpbox_sslh
+  name: sa_jumpbox_sslh
+- src: softasap.sa-box-bootstrap
+  name: sa-box-bootstrap
+- src: softasap.sa-vpn-pptp
+  name: sa-vpn-pptp
+- src: softasap.sa-vpn-openvpn
+  name: sa-vpn-openvpn
+- src: softasap.sa-vpn-softether
+  name: sa-vpn-softether
+- src: softasap.sa_vpn_wireguard
+  name: sa_vpn_wireguard
+- src: softasap.sa-port-knock
+  name: sa-port-knock
